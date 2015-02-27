@@ -27,6 +27,11 @@ Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.uBphhV
 %build
 #cd %{_builddir}/%{name}-%{version}      #由于不屏蔽解压源码包指令后，build段脚本将不包括进入“源码”目录的指令，使得下列configure命令无法执行，可在build段加入定位目录的指令
 ./configure                              #执行配置编译
+
+%install
+#cd %{_builddir}/%{name}-%{version}      #同样的原因，make命令将在%{_builddir}目录执行，需要添加此指令修正目录
+%{__rm} -rf $RPM_BUILD_ROOT
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
 ```
 
 # spec文件中可以引用的系统宏变量定义：
