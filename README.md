@@ -36,6 +36,7 @@ Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.uBphhV
 
 # spec文件中可以引用的系统宏变量定义：
 /usr/lib/rpm/macros
+/usr/lib/rpm/rpmrc
 
 ```
 rpm --showrc
