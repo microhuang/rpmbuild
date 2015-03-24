@@ -1,3 +1,9 @@
+# yum
+```
+yum whatprovides "*/..."
+yum resolvedep "......"
+```
+
 # rpmbuild
 定制src.rpm包
 
